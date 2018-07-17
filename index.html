@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+	<style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Массивы и хэши</h1>
+	</header>
+
+	<section class="slide" id="cover">
+		<h2>Массивы и хэши</h2>
+		<h3>[&hellip;]</h3>
+		<h3>{key: value}</h3>
+		<style>
+			#cover h2 {
+				margin: 30px 0 0;
+				color: #454545;
+				text-align: center;
+				font-size: 70px;
+			}
+
+			#cover h3 {
+				color: #454545;
+				font-size: 2em;
+				text-align: center;
+				font-weight: bold;
+				margin: 1em 0 0;
+				padding: 0;
+			}
+
+			#cover p a {
+				color: white;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Основные действия</h2>
+		<h3>N → N<sup>*</sup></h3>
+		<h3>N → N - M</h3>
+		<h3>N → 1</h3>
+	</section>
+
+	<section class="slide">
+		<h2>N → N<sup>*</sup></h2>
+		<div class="columns two">
+			<p><img width="100%" src="pictures/thinking.jpg"></p>
+			<div style="font-size: 2em;">
+				<p>[&hellip;]: <strong>Array.map</strong></p>
+				<p>{&hellip;}: <strong>_.mapValues</strong></p>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>Map</h2>
+		<pre>
+			<code>noFoo = [1, 2, 3]</code>
+			<code><mark>withFoo = noFoo.map(addFoo);</mark></code>
+			<code>['1foo', '2foo', '3foo']</code>
+		</pre>
+		<pre>
+			<code>function addFoo(item) {</code>
+			<code>  return item + 'foo';</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>N → N - M</h2>
+		<div class="columns two">
+			<p><img width="100%" src="pictures/thinking2.png"></p>
+			<div style="font-size: 2em;">
+				<p>[&hellip;]: <strong>Array.filter</strong></p>
+				<p>{&hellip;}: <strong>_.pick</strong></p>
+			</div>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>Filter</h2>
+		<pre>
+			<code>all = [1, 4, 2, 3]</code>
+			<code><mark>3andMore = all.filter(isGreater2);</mark></code>
+			<code>[4, 3]</code>
+		</pre>
+		<pre>
+			<code>function isGreater2(item) {</code>
+			<code>  return item > 2;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>N → 1</h2>
+		<div class="columns two">
+			<p><img width="100%" src="pictures/thinking3.png"></p>
+			<div style="font-size: 2em;">
+				<p>[&hellip;]: <strong>Array.reduce</strong></p>
+				<p>{&hellip;}: <strong>_.reduce</strong></p>
+			</div>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>Reduce</h2>
+		<pre>
+			<code>[1, 2, 3]</code>
+			<code><mark>summary = all.reduce(sumItPlease, 0);</mark></code>
+			<code>6</code>
+		</pre>
+		<pre>
+			<code>function sumItPlease(acc, item) {</code>
+			<code>  return acc += item;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>эээмммннн</h2>
+		<div class="columns two">
+			<p><img width="100%" src="pictures/jc.jpg"></p>
+			<pre>
+				<code>var res = [], source = [1, 2, 3]</code>
+				<code><mark>summary = source.forEach(function(item) {</mark></code>
+				<code><mark>  res.push(item + 'f');</mark></code>
+				<code><mark>});</mark></code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>N → N<sup>*</sup></h2>
+		<p class="shout">source.map()</p>
+	</section>
+
+	<section class="slide">
+		<h2>эээмммннн</h2>
+		<div class="columns two">
+			<p><img width="100%" src="pictures/jc.jpg"></p>
+			<pre>
+				<code>var res = [], source = [1, 2, 3]</code>
+				<code>summary = source.forEach(function(item) {</code>
+				<code>  if (item > 3) {</code>
+				<code>    res.push(item + 'f');</code>
+				<code>  }</code>
+				<code>});</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>N → N - M</h2>
+		<p class="shout">source.filter()</p>
+	</section>
+
+	<section class="slide">
+		<h2>Цепочки</h2>
+		<div style="display: flex; align-items: center; height: 60%;">
+		<pre>
+			<code style="font-size: 1.5em">source.filter(dropBad).map(doMagic);</code>
+		</pre>
+		</div>
+	</section>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
